@@ -186,9 +186,11 @@
                     android:layout_weight="1"
                     android:background="@drawable/ghost_button"
                     android:gravity="center"
+                    android:fontFamily="@font/neo_sans_pro_medium"
                     android:paddingHorizontal="16dp"
                     android:text="NO"
-                    android:textColor="@color/primaryDark" />
+                    android:textColor="@color/colorTxtSecondary"
+                    android:backgroundTint="@color/colorTxtSecondary"/>
 
                 <Button
                     android:id="@+id/confirmDialogYesButton"
@@ -200,6 +202,7 @@
                     android:gravity="center"
                     android:paddingHorizontal="16dp"
                     android:text="Yes"
+                    android:fontFamily="@font/neo_sans_pro_medium"
                     android:textColor="@android:color/white" />
             </LinearLayout>
 
