@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/overlayBlur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:blurOverlayColor="#A9000000"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="72dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:clickable="false"
+            android:focusable="false"
+            android:paddingHorizontal="16dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:gravity="center">
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_sheet_devider" />
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:id="@+id/bottomSheetFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/progressDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="24dp"
+        android:clickable="true"
+        android:clipToPadding="true"
+        android:focusable="true"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:indeterminate="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/progressDialogTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLines="1"
+                    android:text="Judul "
+                    android:textColor="@color/colorTxt"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/progressDialogMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:lineSpacingMultiplier="1.4"
+                    android:text="Content"
+                    android:textColor="@color/colorTxtTersier"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/confirmDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="24dp"
+        android:clickable="true"
+        android:clipToPadding="true"
+        android:focusable="true"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/confirmDialogImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/anim_rect"
+                    android:src="@drawable/banner_placeholder"
+                    app:riv_corner_radius="8dp" />
+
+                <TextView
+                    android:id="@+id/confirmDialogTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/neo_sans_pro_medium"
+                    android:maxLines="1"
+                    android:text="Judul "
+                    android:textColor="@color/colorTxt"
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:id="@+id/confirmDialogMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:lineSpacingMultiplier="1.4"
+                    android:text="Content"
+                    android:textColor="@color/colorTxtTersier"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/confirmDialogNoButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ghost_button"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="NO"
+                    android:textColor="@color/primaryDark" />
+
+                <Button
+                    android:id="@+id/confirmDialogYesButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/filled_button"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="Yes"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/alertDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:clipToPadding="true"
+        android:focusable="true"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/alertMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:lineSpacingMultiplier="1.4"
+            android:padding="10dp"
+            android:text="Message"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

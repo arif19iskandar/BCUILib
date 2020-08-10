@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="danger">#cf212a</color>
+    <color name="info">#216bc4</color>
+    <color name="warning">#fbaf18</color>
+    <color name="secondary">#52575c</color>
+    <color name="primary">#29ABE2</color>
+    <color name="primaryDark">#1B1F42</color>
+    <color name="success">#00AA13</color>
+
+<!--    Animation-->
+    <color name="anim_end">#dddddd</color>
+    <color name="anim_start">#F5F5F5</color>
+
+<!--    TEXT-->
+    <color name="colorTxt">#344548</color>
+    <color name="colorTxtSecondary">#8A344548</color>
+    <color name="colorTxtTersier">#8A344548</color>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/anim_rect_end" android:height="18dp" />
+    <item android:drawable="@drawable/anim_rect_end" android:height="18dp" android:top="32dp"/>
+    <item android:drawable="@drawable/anim_rect_end" android:height="18dp" android:top="64dp"/>
+</layer-list>

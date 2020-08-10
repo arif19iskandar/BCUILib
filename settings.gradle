@@ -1,0 +1,3 @@
+include ':BCUILib'
+include ':app'
+rootProject.name = "BCUIPackExample"

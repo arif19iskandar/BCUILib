@@ -1,0 +1,4 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/anim_rounded_start" android:duration="1000"/>
+    <item android:drawable="@drawable/anim_rounded_end" android:duration="1000"/>
+</animation-list>
