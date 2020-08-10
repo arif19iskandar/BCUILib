@@ -197,6 +197,7 @@ public class BCUILayout {
             @Override
             public void onClick(View view) {
                 yesButton.onClickListener();
+                binding.confirmDialogYesButton.setOnClickListener(null);
                 hideOverlay(binding.confirmDialog);
             }
         });
@@ -224,6 +225,7 @@ public class BCUILayout {
             @Override
             public void onClick(View view) {
                 noButton.onClickListener();
+                binding.confirmDialogNoButton.setOnClickListener(null);
                 hideOverlay(binding.confirmDialog);
             }
         });
