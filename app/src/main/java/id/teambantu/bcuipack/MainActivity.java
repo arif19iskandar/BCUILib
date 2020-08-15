@@ -3,25 +3,21 @@ package id.teambantu.bcuipack;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
-import android.widget.Toast;
 
-import id.teambantu.bcuilib.BCUILayout;
-import id.teambantu.bcuilib.event.BCDialogButton;
-import id.teambantu.bcuilib.utils.BCImage;
+import id.teambantu.bcuilib.BCUI;
 import id.teambantu.bcuipack.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-    BCUILayout bcuiLayout;
+    BCUI bcuiLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        bcuiLayout = new BCUILayout(this, binding.getRoot());
+        bcuiLayout = new BCUI(this, binding.getRoot());
 
         setContentView(bcuiLayout.getRoot());
 
@@ -33,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showAlert(View view) {
-        bcuiLayout.showAlert("Ups, Alert Shown", BCUILayout.AlertType.PRIMARY, BCUILayout.Time.LONG);
+        bcuiLayout.showAlert("Ups, Alert Shown", BCUI.AlertType.PRIMARY, BCUI.Time.LONG);
     }
 
     public void showConfirmDialog1(View view) {

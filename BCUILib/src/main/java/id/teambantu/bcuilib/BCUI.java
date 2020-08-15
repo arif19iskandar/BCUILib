@@ -17,7 +17,7 @@ import id.teambantu.bcuilib.ui.BCFragment;
 import id.teambantu.bcuilib.utils.BCBitmapTransform;
 import id.teambantu.bcuilib.utils.BCImage;
 
-public class BCUILayout {
+public class BCUI {
     private BcUiLayoutBinding binding;
     private AppCompatActivity activity;
     private BottomSheetBehavior bottomSheet;
@@ -28,7 +28,7 @@ public class BCUILayout {
     private boolean bottomSheetShow = false;
     private boolean cancelable = true;
 
-    public BCUILayout(AppCompatActivity activity, View v) {
+    public BCUI(AppCompatActivity activity, View v) {
         this.activity = activity;
 
         initLib(v);
