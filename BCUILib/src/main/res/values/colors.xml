@@ -14,7 +14,7 @@
     <color name="anim_start">#F5F5F5</color>
 
 <!--    TEXT-->
-    <color name="colorTxt">#344548</color>
-    <color name="colorTxtSecondary">#8A344548</color>
-    <color name="colorTxtTersier">#8A344548</color>
+    <color name="txt">#344548</color>
+    <color name="txtSecondary">#8A344548</color>
+    <color name="txtTersier">#8A344548</color>
 </resources>

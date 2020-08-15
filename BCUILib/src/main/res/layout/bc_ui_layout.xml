@@ -97,7 +97,7 @@
                     android:fontFamily="@font/roboto_medium"
                     android:maxLines="1"
                     android:text="Judul "
-                    android:textColor="@color/colorTxt"
+                    android:textColor="@color/txt"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -109,7 +109,7 @@
                     android:fontFamily="@font/roboto"
                     android:lineSpacingMultiplier="1.4"
                     android:text="Content"
-                    android:textColor="@color/colorTxtTersier"
+                    android:textColor="@color/txtTersier"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
@@ -158,7 +158,7 @@
                     android:fontFamily="@font/neo_sans_pro_medium"
                     android:maxLines="1"
                     android:text="Judul "
-                    android:textColor="@color/colorTxt"
+                    android:textColor="@color/txt"
                     android:textSize="21sp" />
 
                 <TextView
@@ -169,7 +169,7 @@
                     android:fontFamily="@font/roboto"
                     android:lineSpacingMultiplier="1.4"
                     android:text="Content"
-                    android:textColor="@color/colorTxtTersier"
+                    android:textColor="@color/txtTersier"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -189,8 +189,8 @@
                     android:fontFamily="@font/neo_sans_pro_medium"
                     android:paddingHorizontal="16dp"
                     android:text="NO"
-                    android:textColor="@color/colorTxtSecondary"
-                    android:backgroundTint="@color/colorTxtSecondary"/>
+                    android:textColor="@color/txtSecondary"
+                    android:backgroundTint="@color/txtSecondary"/>
 
                 <Button
                     android:id="@+id/confirmDialogYesButton"
