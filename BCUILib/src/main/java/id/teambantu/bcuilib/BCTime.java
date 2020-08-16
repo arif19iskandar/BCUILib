@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 
 import androidx.annotation.Nullable;
 
-import id.teambantu.bcuilib.event.BCTimeWathcer;
+import id.teambantu.bcuilib.utils.BCTimeWathcer;
 import id.teambantu.bcuilib.utils.BCUtils;
 
 

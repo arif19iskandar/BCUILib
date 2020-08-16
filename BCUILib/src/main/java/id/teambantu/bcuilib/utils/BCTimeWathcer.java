@@ -1,4 +1,4 @@
-package id.teambantu.bcuilib.event;
+package id.teambantu.bcuilib.utils;
 
 import android.os.Handler;
 

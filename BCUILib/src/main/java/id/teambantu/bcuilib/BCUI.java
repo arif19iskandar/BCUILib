@@ -10,8 +10,11 @@ import androidx.annotation.NonNull;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+import java.util.HashMap;
+
 import eightbitlab.com.blurview.RenderScriptBlur;
 import id.teambantu.bcuilib.databinding.BcUiLayoutBinding;
+import id.teambantu.bcuilib.event.BCBottomSheetListener;
 import id.teambantu.bcuilib.event.BCDialogButton;
 import id.teambantu.bcuilib.ui.BCFragment;
 import id.teambantu.bcuilib.utils.BCBitmapTransform;
@@ -129,8 +132,7 @@ public class BCUI {
         showOverlay(binding.bottomSheet);
 
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.bottomSheet, fragment).commit();
-
+        transaction.replace(R.id.bottomSheetFragment, fragment).commit();
         bottomSheet.setState(BottomSheetBehavior.STATE_EXPANDED);
     }
 
