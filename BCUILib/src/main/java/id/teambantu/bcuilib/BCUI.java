@@ -21,6 +21,7 @@ public class BCUI {
     private BcUiLayoutBinding binding;
     private AppCompatActivity activity;
     private BottomSheetBehavior bottomSheet;
+    private BCListener onBottomClose;
 
     //    Dialog
     private View currentDialog;
@@ -46,6 +47,7 @@ public class BCUI {
                 switch (newState) {
                     case BottomSheetBehavior.STATE_HIDDEN:
                     case BottomSheetBehavior.STATE_COLLAPSED:
+                        if(onBottomClose!=null) onBottomClose.onCloseBottomSheet();
                         hideOverlay(binding.bottomSheet);
                         break;
                     case BottomSheetBehavior.STATE_EXPANDED:
@@ -253,6 +255,10 @@ public class BCUI {
     public void hideBottomSheet(BCListener listener){
         bottomSheet.setState(BottomSheetBehavior.STATE_HIDDEN);
         listener.onCloseBottomSheet();
+    }
+
+    public void setOnBottomClose(BCListener listener){
+        this.onBottomClose = listener;
     }
 
     //    Basic function
