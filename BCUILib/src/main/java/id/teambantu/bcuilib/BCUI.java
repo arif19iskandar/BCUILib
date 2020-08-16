@@ -143,6 +143,14 @@ public class BCUI {
 
     }
 
+    public void disableDragBottomSheet(){
+        bottomSheet.setDraggable(false);
+    }
+
+    public void enableDragBottomSheet(){
+        bottomSheet.setDraggable(true);
+    }
+
     //    Alert Dialog
     public void showAlert(String message, AlertType type, Time showTime) {
         showDialog(binding.alertDialog);
