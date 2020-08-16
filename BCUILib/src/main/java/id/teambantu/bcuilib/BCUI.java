@@ -1,21 +1,18 @@
 package id.teambantu.bcuilib;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Handler;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
-import java.util.HashMap;
-
 import eightbitlab.com.blurview.RenderScriptBlur;
 import id.teambantu.bcuilib.databinding.BcUiLayoutBinding;
-import id.teambantu.bcuilib.event.BCBottomSheetListener;
 import id.teambantu.bcuilib.event.BCDialogButton;
+import id.teambantu.bcuilib.event.BCListener;
 import id.teambantu.bcuilib.ui.BCFragment;
 import id.teambantu.bcuilib.utils.BCBitmapTransform;
 import id.teambantu.bcuilib.utils.BCImage;
@@ -253,15 +250,20 @@ public class BCUI {
         hideOverlay(currentDialog);
     }
 
+    public void hideBottomSheet(BCListener listener){
+        bottomSheet.setState(BottomSheetBehavior.STATE_HIDDEN);
+        listener.onCloseBottomSheet();
+    }
+
     //    Basic function
     public View getRoot() {
         return binding.getRoot();
     }
 
-    public boolean onBackPressed(){
-        if(!cancelable) return false;
-        if(dialogShow){
-            if(bottomSheetShow){
+    public boolean onBackPressed() {
+        if (!cancelable) return false;
+        if (dialogShow) {
+            if (bottomSheetShow) {
                 bottomSheet.setState(BottomSheetBehavior.STATE_HIDDEN);
             } else {
                 hideDialog();
