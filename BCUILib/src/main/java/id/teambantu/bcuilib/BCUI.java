@@ -126,13 +126,21 @@ public class BCUI {
     }
 
     //  Bottom Sheet Dialog
-    public void showBottomSheet(BCFragment fragment) {
+    public void showBottomSheet(final BCFragment fragment) {
         bottomSheetShow = true;
         showOverlay(binding.bottomSheet);
 
-        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.bottomSheetFragment, fragment).commit();
+        binding.bottomSheetFragment.animate().setDuration(150).alpha(0).start();
         bottomSheet.setState(BottomSheetBehavior.STATE_EXPANDED);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.bottomSheetFragment, fragment).commit();
+                binding.bottomSheetFragment.animate().setDuration(150).alpha(1).start();
+            }
+        }, 150);
+
     }
 
     //    Alert Dialog
