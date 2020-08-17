@@ -115,7 +115,7 @@ public class BCUI {
                 }
             }, 300);
         }
-
+        setBottomSheetView(new BCFragment());
     }
 
     private void showDialog(View v) {
@@ -135,12 +135,16 @@ public class BCUI {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.bottomSheetFragment, fragment).commit();
+                setBottomSheetView(fragment);
                 binding.bottomSheetFragment.animate().setDuration(150).alpha(1).start();
             }
         }, 150);
 
+    }
+
+    private void setBottomSheetView(BCFragment fragment) {
+        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.bottomSheetFragment, fragment).commit();
     }
 
     public void disableDragBottomSheet(){
