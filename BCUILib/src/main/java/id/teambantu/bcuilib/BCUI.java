@@ -271,6 +271,10 @@ public class BCUI {
     public void hideDialog() {
         hideOverlay(currentDialog);
     }
+    public void hideDialog(Runnable r) {
+        hideOverlay(currentDialog);
+        new Handler().postDelayed(r, 300);
+    }
 
     public void hideBottomSheet(BCListener listener){
         bottomSheet.setState(BottomSheetBehavior.STATE_HIDDEN);
