@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import id.teambantu.bcuilib.BCUI;
+import id.teambantu.bcuilib.ui.BCFragment;
 import id.teambantu.bcuipack.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,14 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         bcuiLayout = new BCUI(this, binding.getRoot());
-
         setContentView(bcuiLayout.getRoot());
 
     }
 
 
-    public void cek(final View view) {
-        bcuiLayout.showBottomSheet();
+    public void showBottom(final View view) {
+        bcuiLayout.showBottomSheet(new BCFragment());
     }
 
     public void showAlert(View view) {

@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="bottom"
     tools:context=".MainActivity">
+
+   <Button
+       android:onClick="showBottom"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Bottom"/>
 
    <Button
        android:onClick="showConfirmDialog1"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:text="OK"/>
+       android:text="Dialog"/>
+
+   <Button
+       android:onClick="showAlert"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="alert"/>
 
 </LinearLayout>

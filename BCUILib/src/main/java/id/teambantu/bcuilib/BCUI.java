@@ -1,7 +1,17 @@
 package id.teambantu.bcuilib;
 
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Handler;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.KeyCharacterMap;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +28,8 @@ import id.teambantu.bcuilib.utils.BCBitmapTransform;
 import id.teambantu.bcuilib.utils.BCImage;
 
 public class BCUI {
+
+    private final static String TAG = BCUI.class.getSimpleName();
     private BcUiLayoutBinding binding;
     private AppCompatActivity activity;
     private BottomSheetBehavior bottomSheet;
@@ -31,12 +43,26 @@ public class BCUI {
 
     public BCUI(AppCompatActivity activity, View v) {
         this.activity = activity;
-
         initLib(v);
         initBlurLib();
         initBottomSheet();
+
+    }
+    private boolean hasNavbar(){
+        if (Build.FINGERPRINT.startsWith("generic"))
+            return true;
+        int id = activity.getResources().getIdentifier("config_showNavigationBar", "bool", "android");
+        return id > 0 && activity.getResources().getBoolean(id);
     }
 
+    private int navbarSize(){
+        Resources resources = activity.getResources();
+        int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            return resources.getDimensionPixelSize(resourceId);
+        }
+        return 0;
+    }
 
     private void initBottomSheet() {
         bottomSheet = BottomSheetBehavior.from(binding.bottomSheet);
@@ -66,6 +92,9 @@ public class BCUI {
     private void initLib(View v) {
         binding = BcUiLayoutBinding.inflate(activity.getLayoutInflater());
         binding.frameLayout.addView(v);
+
+        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if(hasNavbar()) binding.parent.setPadding(0,0,0,navbarSize());
     }
 
     private void initBlurLib() {

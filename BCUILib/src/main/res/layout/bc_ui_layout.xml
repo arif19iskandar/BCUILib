@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:id="@+id/parent"
+    android:background="#fff"
     android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
         <eightbitlab.com.blurview.BlurView
             android:id="@+id/overlayBlur"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:blurOverlayColor="#A9000000"/>
+            app:blurOverlayColor="#A9000000" />
     </RelativeLayout>
 
     <LinearLayout
@@ -35,14 +39,16 @@
             android:layout_height="match_parent"
             android:layout_marginTop="72dp"
             android:background="@color/white"
-            android:orientation="vertical"
             android:clickable="false"
             android:focusable="false"
+            android:orientation="vertical"
             android:paddingHorizontal="16dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="16dp"
                 android:gravity="center">
+
                 <View
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -185,12 +191,12 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/ghost_button"
-                    android:gravity="center"
+                    android:backgroundTint="@color/txtSecondary"
                     android:fontFamily="@font/neo_sans_pro_medium"
+                    android:gravity="center"
                     android:paddingHorizontal="16dp"
                     android:text="NO"
-                    android:textColor="@color/txtSecondary"
-                    android:backgroundTint="@color/txtSecondary"/>
+                    android:textColor="@color/txtSecondary" />
 
                 <Button
                     android:id="@+id/confirmDialogYesButton"
@@ -199,10 +205,10 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/filled_button"
+                    android:fontFamily="@font/neo_sans_pro_medium"
                     android:gravity="center"
                     android:paddingHorizontal="16dp"
                     android:text="Yes"
-                    android:fontFamily="@font/neo_sans_pro_medium"
                     android:textColor="@android:color/white" />
             </LinearLayout>
 
