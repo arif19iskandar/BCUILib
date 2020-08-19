@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         bcuiLayout = new BCUI(this, binding.getRoot());
         setContentView(bcuiLayout.getRoot());
 
+        bcuiLayout.lightStatusBar();
     }
 
 
