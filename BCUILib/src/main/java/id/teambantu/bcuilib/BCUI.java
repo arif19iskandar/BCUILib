@@ -330,13 +330,15 @@ public class BCUI {
     }
 
     public boolean onBackPressed() {
-        if (!cancelable) return false;
+
         if (dialogShow) {
+            if (!cancelable) return false;
             if (bottomSheetShow) {
                 bottomSheet.setState(BottomSheetBehavior.STATE_HIDDEN);
             } else {
                 hideDialog();
             }
+            cancelable = true;
             return false;
         }
         return true;
